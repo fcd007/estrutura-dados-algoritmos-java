@@ -1,5 +1,7 @@
 package com.javacode.estruturadados.vetor;
 
+import java.util.Arrays;
+
 public class Vetor {
 	
 	private String[] elementos;
@@ -10,6 +12,8 @@ public class Vetor {
 		this.elementos = new String[capacidade];
 		this.tamanho = 0;
 	}
+	
+	
 	
 	/**
 	 * Algorimo de adiciona elemento no array de Strings opção 1
@@ -32,5 +36,30 @@ public class Vetor {
 			return true;
 		}
 		return false;
+	}
+	
+	public int tamanho() {
+		return this.tamanho;
+	}
+
+
+
+	@Override
+	public String toString() {
+		StringBuilder string = new StringBuilder();
+		string.append("[");
+		
+		for (int i = 0; i < this.tamanho-1; i++) {
+			string.append(elementos[i]);
+			string.append(", ");
+		}
+		
+		if(this.tamanho > 0) {
+			string.append(this.elementos[this.tamanho-1]);
+		}
+		
+		string.append("]");
+		
+		return string.toString();
 	}
 }
