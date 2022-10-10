@@ -11,21 +11,6 @@ public class Vetor {
 		this.tamanho = 0;
 	}
 
-	/**
-	 * Algorimo de adiciona elemento no array de Strings op��o 1
-	 * 
-	 * @throws Exception
-	 */
-//	public void adiciona(String elemento) {
-//		for(int i = 0; i < this.elementos.length; i++) {
-//			if(this.elementos[i] == null) {
-//				this.elementos[i] = elemento;
-//				//usamos para frear o loop do for.
-//				break;
-//			}
-//		}
-//	}
-
 	public boolean adiciona(String elemento) {
 		if (this.tamanho < this.elementos.length) {
 			this.elementos[this.tamanho] = elemento;
@@ -46,7 +31,23 @@ public class Vetor {
 			}
 		}
 
-		return -1; //posição não existe dentro do vetor
+		return -1; // posição não existe dentro do vetor
+	}
+
+	public boolean adiciona(int posicao, String elemento) {
+		// adicionar elemento na primeira posiçao do vetor vetor[0] = "A"
+		if(!(posicao >= 0 && posicao <= tamanho)) {
+			throw new IllegalArgumentException("Posicao invalida");
+		}
+		//mover todos os elementos
+		for( int i = this.tamanho-1; i >= posicao; i--) {
+			this.elementos[i+1] = this.elementos[i];
+		}
+		
+		this.elementos[posicao] = elemento;
+		this.tamanho++;
+		
+		return false;
 	}
 
 	@Override

@@ -2,7 +2,7 @@ package com.javacode.estruturadados.vetor.teste;
 
 import com.javacode.estruturadados.vetor.Vetor;
 
-public class aula6 {
+public class aula06 {
 
 	public static void main(String[] args) {
 
@@ -13,7 +13,7 @@ public class aula6 {
 		vetor.adiciona("Marco");
 		vetor.adiciona("Abril");
 		
-		System.out.println(vetor.busca("Janeiros"));
+		System.out.println(vetor.busca("Junho"));
 	}
 
 }
