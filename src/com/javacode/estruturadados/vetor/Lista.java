@@ -42,6 +42,10 @@ public class Lista<T> {
 
 		return -1; // posição não existe dentro do vetor
 	}
+	
+	public boolean contem(T elemento) {
+		return busca(elemento) > -1;
+	}
 
 	public boolean adiciona(int posicao, T elemento) {
 		// adicionar elemento na primeira posiçao do vetor vetor[0] = "A"
