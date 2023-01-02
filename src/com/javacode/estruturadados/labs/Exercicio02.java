@@ -13,15 +13,18 @@ public class Exercicio02 {
 		listaString.adiciona("B");
 		listaString.adiciona("C");
 		listaString.adiciona("F");
-		listaString.adiciona("G");
+		listaString.adiciona("A");
 
-		int ultimoIndice = listaString.ultimoIndice();
+		int ultimoIndice = listaString.ultimoIndice("A");
 		System.out.println("O último indice do array string é = " + ultimoIndice);
 
 		List<String> lista = new ArrayList<>();
 
 		lista.add("A");
 		lista.add("B");
+		lista.add("B");
+		lista.add("B");
+		lista.add("A");
 		if (lista.size() != 0) {
 			int ultimoIndiceArrayList = lista.lastIndexOf("A");
 			System.out.println("O último indice do ArrayList string é = " + ultimoIndiceArrayList);
