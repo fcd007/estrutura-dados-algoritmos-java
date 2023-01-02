@@ -95,4 +95,21 @@ public class Lista<T> {
 			this.elementos = elementosNovos;
 		}
 	}
+
+	/**
+	 * 
+	 * @param elemento
+	 * @return int posicao do elemento encontrado como ultimo indice
+	 */
+	public int ultimoIndice(T elemento) {
+		int ultimaPosicao = -1;
+		
+		for (int i = this.tamanho-1; i >= 0; i--) {
+			if (this.elementos[i].equals(elemento)) {
+				return i;
+			}
+		}
+		
+		return ultimaPosicao;
+	}
 }

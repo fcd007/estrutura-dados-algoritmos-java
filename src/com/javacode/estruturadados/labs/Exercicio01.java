@@ -2,6 +2,12 @@ package com.javacode.estruturadados.labs;
 
 import com.javacode.estruturadados.vetor.Lista;
 
+/**
+ * 
+ * @author Dantas
+ * Exercicio 01 - melhore a classe Lista e implemente o método contém, 
+ * semelhante ao método da classe ArrayList.
+ */
 public class Exercicio01 {
 	public static void main(String[] args) {
 		Lista<String> lista = new Lista<>(5);
