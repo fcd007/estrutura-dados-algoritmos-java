@@ -34,7 +34,6 @@ public class Lista<T> {
 	}
 
 	public T busca(int posicao) {
-
 		if (!(posicao >= 0 && posicao < tamanho)) {
 			throw new IllegalArgumentException("Posicao invalida");
 		}
@@ -109,7 +108,6 @@ public class Lista<T> {
 
 	public void remove(int posicao) {
 		if (!(posicao >= 0 && posicao < tamanho)) {
-
 			throw new IllegalArgumentException("Posicao invalida");
 		}
 
@@ -126,14 +124,13 @@ public class Lista<T> {
 			this.remove(posicao);
 		}
 	}
-
-	/**
-	 * @param T elemento
-	 * @return T Elemento
-	 */
-	public T removeElemento(T elemento) {
-
-		return elemento;
+	
+	public void limpar() {
+		for(int i = 0; i < this.tamanho; i++) {
+			this.elementos[i] = null;
+		}
+		
+		this.tamanho = 0;
 	}
 
 	@Override
