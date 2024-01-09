@@ -2,7 +2,7 @@ package com.javacode.estruturadados.labs;
 
 import com.javacode.estruturadados.vetor.Lista;
 
-public class Exercicio5 {
+public class Exercicio05 {
 
 	public static void main(String[] args) {
 		Lista<String> listaString = new Lista<String>(5);
