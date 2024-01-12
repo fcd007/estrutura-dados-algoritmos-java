@@ -38,38 +38,36 @@ public class Exercicio06 {
 				break;
 			}
 			case 4: {
-				
-				yield type;
+				obtemContato(scan, lista);
+				break;
 			}
 			case 5: {
-
-				yield type;
+				pesquisarUltimoIndiceContato(scan, lista);
+				break;
 			}
 			case 6: {
-
-				yield type;
+				pesquisarUContatoExiste(scan, lista);
+				break;
 			}
 			case 7: {
-
-				yield type;
+				excluirPorPosicao(scan, lista);
+				break;
 			}
 			case 8: {
-
-				yield type;
+				excluirContato(scan, lista);
+				break;
 			}
-
 			case 9: {
-
-				yield type;
+				imprimeTamanhoDoVetor(lista);
+				break;
 			}
 			case 10: {
-
-				yield type;
+				limparTodosOsContatos(lista);
+				break;
 			}
-
 			case 11: {
-
-				yield type;
+				imprimeContatos(lista);
+				break;
 			}
 
 			default:
@@ -113,16 +111,119 @@ public class Exercicio06 {
 		System.out.println("Contato adicionado com sucesso");
 		System.out.println(contato.toString());
 	}
-	
+
 	private static void obtemContatoPosicao(Scanner scan, Lista<Contato> lista) {
-		int posicaoContato = lerInformacaoInt("Entre com a posição a serpesquisada: ", scan);
-		
+		int posicaoContato = lerInformacaoInt("Entre com a posição a ser pesquisada: ", scan);
+
 		try {
-			  Contato contato = lista.busca(posicaoContato);
-			  System.out.println("Contato existe, seguem dados: ");
-			  System.out.println(contato);
+			Contato contato = lista.busca(posicaoContato);
+			System.out.println("Contato existe, seguem dados: ");
+			System.out.println(contato);
 		} catch (Exception e) {
 			System.out.println("Posição inválida");
+		}
+	}
+	
+	private static void obtemContato(Scanner scan, Lista<Contato> lista) {
+		int posicaoContato = lerInformacaoInt("Entre com a posição a ser pesquisada: ", scan);
+
+		try {
+			Contato contato = lista.busca(posicaoContato);
+			System.out.println("Contato existe, seguem dados: ");
+			System.out.println(contato);
+			System.out.println("Fazendo pesquisa do contato encontrado: ");
+			posicaoContato = lista.busca(contato);
+			System.out.println("Contato encontrado na posição: " + posicaoContato);
+			
+		} catch (Exception e) {
+			System.out.println("Posição inválida");
+		}
+	}
+	
+	private static void pesquisarUltimoIndiceContato(Scanner scan, Lista<Contato> lista) {
+		int posicaoContato = lerInformacaoInt("Entre com a posição a ser pesquisada: ", scan);
+
+		try {
+			Contato contato = lista.busca(posicaoContato);
+			System.out.println("Contato existe, seguem dados: ");
+			System.out.println(contato);
+			System.out.println("Fazendo pesquisa do último contato encontrado: ");
+			posicaoContato = lista.ultimoIndice(contato);
+			System.out.println("Contato encontrado na posição: " + posicaoContato);
+			
+		} catch (Exception e) {
+			System.out.println("Posição inválida");
+		}
+	}
+	
+	private static void pesquisarUContatoExiste(Scanner scan, Lista<Contato> lista) {
+		int posicaoContato = lerInformacaoInt("Entre com a posição a ser pesquisada: ", scan);
+		
+		try {
+			Contato contato = lista.busca(posicaoContato);
+			boolean existe = lista.contem(contato);
+			if(existe) {
+				System.out.println("Contato existe, seguem dados: ");
+				System.out.println(contato);				
+			}else {
+				System.out.println("Contato não existe");
+			}
+			
+		} catch (Exception e) {
+			System.out.println("Posição inválida");
+		}
+	}
+	
+	private static void excluirPorPosicao(Scanner scan, Lista<Contato> lista) {
+		int posicaoContato = lerInformacaoInt("Entre com a posição a ser removida: ", scan);
+		
+		try {
+			Contato contato = lista.busca(posicaoContato);
+			System.out.println("Contato selecionado para exclusão: " + contato);
+			
+			lista.remove(posicaoContato);
+			
+			System.out.println();
+		} catch (Exception e) {
+			System.out.println("Posição inválida");
+		}
+	}
+	
+	private static void excluirContato(Scanner scan, Lista<Contato> lista) {
+		int posicaoContato = lerInformacaoInt("Entre com a posição a ser removida: ", scan);
+		
+		try {
+			Contato contato = lista.busca(posicaoContato);
+			System.out.println("Contato selecionado para exclusão: " + contato);
+			
+			lista.remove(contato);
+		} catch (Exception e) {
+			System.out.println("Posição inválida");
+		}
+	}
+	
+	private static void imprimeTamanhoDoVetor(Lista<Contato> lista) {		
+		try {
+			System.out.println("Tamanho do vetor é de :" + lista.tamanho());
+		} catch (Exception e) {
+			System.out.println("Posição inválida");
+		}
+	}
+	
+	private static void limparTodosOsContatos(Lista<Contato> lista) {		
+		try {
+			lista.limpar();
+			System.out.println("Removendo todos os contatos.");
+		} catch (Exception e) {
+			System.out.println("Erro ao realizar exclusão da lista, lista inválida");
+		}
+	}
+	
+	private static void imprimeContatos(Lista<Contato> lista) {		
+		try {
+			System.out.println(lista);
+		} catch (Exception e) {
+			System.out.println("Erro ao realizar exclusão da lista, lista inválida");
 		}
 	}
 
